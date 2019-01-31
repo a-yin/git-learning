@@ -1,7 +1,8 @@
-# git-learning
 [TOC]
+## Git学习
 #### 了解Git基本概念
-Git 是目前世界上使用广泛的分布式版本控制系统。[官网](https://git-scm.com)
+Git 是目前世界上使用广泛的分布式版本控制系统。
+[Git官网](https://git-scm.com)
 
 #### 掌握Git常用的命令行操作
 
@@ -51,21 +52,50 @@ Git 是目前世界上使用广泛的分布式版本控制系统。[官网](http
 ![1bca3e5cfff76287f0a542ae80e08bf3.png](en-resource://database/1999:0)
 ![ee14e8a2be1cfb19029e55a98dee9b09.png](en-resource://database/2001:0)
 
-**注：Git支持多种协议，默认 **git:// (原生速度最快)，其它协议得看具体情况选择使用。**
+**注：Git支持多种协议，默认 git:// (原生速度最快)，其它协议得看具体情况选择使用。**
 
 
 ##### 本地仓库pull、push远程仓库
+本地创建分支dev
+> git branch dev
+
+切换到分支dev
+> git checkout dev
+
+上面命令行合并 创建+切换分支dev
+> git checkout -b dev
+
 本地 pull 远程
-> git pull github master
+> git pull github dev
 
 本地 push 远程
 > git add test.txt
-> git push github master
+> git commit -m '提交说明'
+> git push github dev
 
-![dcca1b23c53d40f152679d5e2ae11da4.png](en-resource://database/2009:0)
+说明：
+* **git add** 把test.txt **添加**到暂存区(stage)
+* **git commit** 暂存区的所有内容一次性**提交**到当前分支
+**Git 面向commit 对象** 进行版本控制的！！
 
-****
+![1b50b169922b47f1aaa8e7915104d5fa.png](en-resource://database/2011:0)
+![cff0c586e5fa47be51b5fa2a7757b368.png](en-resource://database/2013:0)
 
+
+**注：编辑时请不要使用Windows自带的记事本打开test.txt，否则push 到远程仓库出现中文乱码，建议使用Notepad++，并将编码改成UTF-8（无BOM）**
+
+附：
+
+Git鼓励大量使用分支：
+> 查看分支： git branch
+创建分支：git branch <name>
+切换分支：git checkout <name>
+创建+切换分支：git checkout -b <name>
+合并某分支到当前分支：git merge <name>
+删除分支：git branch -d <name>
+
+---
+系统学习详见：[廖雪峰的Git教程](https://www.liaoxuefeng.com/wiki/0013739516305929606dd18361248578c67b8067c8c017b000)
 
 
 created by lingb on 2019.01.31
